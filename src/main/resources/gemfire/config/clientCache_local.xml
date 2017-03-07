@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<client-cache
+    xmlns="http://geode.apache.org/schema/cache"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://geode.apache.org/schema/cache http://geode.apache.org/schema/cache/cache-1.0.xsd"
+    version="1.0">
+	<!-- 10.0.32.6:55221,10.0.32.7:55221,10.0.64.10:55221 -->
+	<pool name="gemfirePool" subscription-enabled="true">
+		<locator host="localhost" port="10334"/>
+	</pool>
+
+	<region name="Customer">
+       	<region-attributes refid="PROXY" pool-name="gemfirePool"/>
+    </region>
+
+    <region name="Transaction">
+       	<region-attributes refid="PROXY" pool-name="gemfirePool"/>
+    </region>
+
+</client-cache>
